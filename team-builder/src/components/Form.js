@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const MemberForm = props => {
   const [member, setMember] = useState({ name: "", job: "", email: "" });
@@ -13,6 +13,10 @@ const MemberForm = props => {
     setMember({ name: "", job: "", email: "" });
   };
 
+//   useEffect(() => {
+      
+// }, [props.memberToEdit]);
+
   return (
     <form onSubmit={submitForm}>
       <label htmlFor="name">Name:</label>
@@ -23,7 +27,7 @@ const MemberForm = props => {
         onChange={handleChanges}
         value={member.name}
       />
-      <label htmlFor="job">Job:</label>
+      <label htmlFor="job">Job Role:</label>
       <input
         id="job"
         name="job"
@@ -37,7 +41,7 @@ const MemberForm = props => {
         onChange={handleChanges}
         value={member.email}
        />
-      <button type="submit">Add Note</button>
+      <button type="submit">Add</button>
     </form>
   );
 };
